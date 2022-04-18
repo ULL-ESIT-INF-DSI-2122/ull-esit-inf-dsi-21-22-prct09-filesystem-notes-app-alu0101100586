@@ -16,13 +16,25 @@ export abstract class Reduce {
      * Metodo plantilla que defiene el esqueleto de la propia clase
      */
     public run() {
+        this.pre_reduce();
         this.onlyOneItem();
+        this.after_reduce();
     }
 
     /**
      * Metodo abstracto que realizará la reduccion del array
      */
-    abstract onlyOneItem(): void;
+    protected abstract onlyOneItem(): void;
+
+    /**
+     * Metodo Hook para antes del reduce
+     */
+    protected pre_reduce(){};
+
+    /**
+     * Metodo Hook para despues del reduce
+     */
+    protected after_reduce(){};
 
     /**
      * Funcion ue devuelve el array

@@ -16,12 +16,26 @@ export class AddReduce extends Reduce {
     /**
      * Realiza el reduce del array a un solo elemento que es el restultado de la suma de los elementos
      */
-    onlyOneItem(): void {
+    protected onlyOneItem(): void {
         let aux: number = 0;
         this.array.forEach((item) => {
             aux += item;
         });
         this.array = [];
         this.array.push(aux);
+    }
+
+    /**
+     * Metodo Hook para el antes del paso
+     */
+    protected pre_reduce() {
+        console.log(`ADD: Obteniendo los elementos del array`)
+    }
+
+    /**
+     * Metodo Hook para cuando termina el paso
+     */
+    protected after_reduce() {
+        console.log(`ADD: Se ha reducido el array a un solo elemento`)
     }
 }

@@ -16,7 +16,7 @@ export class DivReduce extends Reduce {
     /**
      * Realiza el reduce del array a un solo elemento que es el restultado de la division de los elementos
      */
-    onlyOneItem(): void {
+    protected onlyOneItem(): void {
         let aux: number = 0;
         this.array.forEach((item, index) => {
             if(index == 0) {
@@ -27,5 +27,19 @@ export class DivReduce extends Reduce {
         });
         this.array = [];
         this.array.push(Math.round(aux));
+    }
+
+    /**
+     * Metodo Hook para el antes del paso
+     */
+    protected pre_reduce() {
+        console.log(`DIV: Obteniendo los elementos del array`)
+    }
+
+    /**
+     * Metodo Hook para cuando termina el paso
+     */
+    protected after_reduce() {
+        console.log(`DIV: Se ha reducido el array a un solo elemento`)
     }
 }
