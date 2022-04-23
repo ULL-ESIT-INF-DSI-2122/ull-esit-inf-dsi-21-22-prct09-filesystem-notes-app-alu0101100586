@@ -34,8 +34,8 @@ yargs.command({
   handler(argv) {
     if (typeof argv.user === 'string' && typeof argv.title === 'string' 
        && typeof argv.text === 'string' && typeof argv.color === 'string') {
-      let note = new Notes(argv.title, argv.text, argv.color);
-      let gestor = new Gestor();
+      const note = new Notes(argv.title, argv.text, argv.color);
+      const gestor = new Gestor();
       gestor.add(note, argv.user);
     }
   },
@@ -72,8 +72,8 @@ yargs.command({
   handler(argv) {
     if (typeof argv.user === 'string' && typeof argv.title === 'string' 
        && typeof argv.text === 'string' && typeof argv.color === 'string') {
-    let note = new Notes(argv.title, argv.text, argv.color);
-    let gestor = new Gestor();
+    const note = new Notes(argv.title, argv.text, argv.color);
+    const gestor = new Gestor();
     gestor.modify(note, argv.user);
     }
   },
@@ -99,7 +99,7 @@ yargs.command({
   },
   handler(argv) {
     if (typeof argv.user === 'string' && typeof argv.title === 'string') {
-      let gestor = new Gestor();
+      const gestor = new Gestor();
       gestor.remove(argv.title, argv.user);
     }
   },
@@ -120,7 +120,7 @@ yargs.command({
   },
   handler(argv) {
     if (typeof argv.user === 'string') {
-    let gestor = new Gestor();
+    const gestor = new Gestor();
     gestor.listHeads(argv.user);
     }
   },
@@ -147,7 +147,7 @@ yargs.command({
   },
   handler(argv) {
     if (typeof argv.user === 'string' && typeof argv.title === 'string') {
-    let gestor = new Gestor();
+    const gestor = new Gestor();
     gestor.read(argv.title, argv.user);
     }
   },

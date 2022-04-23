@@ -2,6 +2,9 @@ import { Notes } from "./notes";
 import * as chalk from 'chalk';
 import * as fs from 'fs';
 
+const error_exist: string = 'ERROR: The Note Does Not Exist';
+const error_path: string = 'ERROR: The Path Does Not Exist';
+
 export class Gestor {
   private path: string;
   private slash: string;
@@ -55,10 +58,10 @@ export class Gestor {
         fs.writeFileSync(this.path + user + this.slash + note.getTitle() + this.ext, aux_note_data);
         console.log(chalk.green.inverse('The Note Has Been Modified Successfully'));
       } else {
-        console.log(chalk.red.inverse('ERROR: The Note Does Not Exist'));
+        console.log(chalk.red.inverse(error_exist));
       }
     } else {
-      console.log(chalk.red.inverse('ERROR: The Path Does Not Exist'));
+      console.log(chalk.red.inverse(error_path));
     }
   }
 
@@ -74,10 +77,10 @@ export class Gestor {
         fs.rmSync(this.path + user + this.slash + note_title + this.ext);
         console.log(chalk.green.inverse('The Note Has Been Successfully Deleted'))
       } else {
-        console.log(chalk.red.inverse('ERROR: The Note Does Not Exist'));
+        console.log(chalk.red.inverse(error_exist));
       }
     } else {
-      console.log(chalk.red.inverse('ERROR: The Path Does Not Exist'));
+      console.log(chalk.red.inverse(error_path));
     }
   }
 
@@ -113,7 +116,7 @@ export class Gestor {
         note.printHead();
         note.printText();
       } else {
-        console.log(chalk.red.inverse('ERROR: The Note Does Not Exist'));
+        console.log(chalk.red.inverse(error_exist));
       }
     } else {
       console.log(chalk.red.inverse('ERROR: The Path Does Not Exist'));
