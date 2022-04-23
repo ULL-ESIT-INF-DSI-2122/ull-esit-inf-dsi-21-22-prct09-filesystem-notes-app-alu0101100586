@@ -29,12 +29,16 @@ export abstract class Reduce {
     /**
      * Metodo Hook para antes del reduce
      */
-    protected pre_reduce(){};
+    protected pre_reduce(){
+      console.log('');
+    };
 
     /**
      * Metodo Hook para despues del reduce
      */
-    protected after_reduce(){};
+    protected after_reduce(){
+      console.log('');
+    };
 
     /**
      * Funcion ue devuelve el array
