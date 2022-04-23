@@ -25,15 +25,15 @@ export class Gestor {
       if(fs.existsSync(this.path + user + this.slash + note.getTitle() + this.ext)) {
         console.log(chalk.red.inverse('ERROR: The Note Already Exits'));
       } else {
-        let note_data = {"title": note.getTitle(), "text": note.getText(), "color": note.getColor()};
-        let aux_note_data = JSON.stringify(note_data);
+        const note_data = {"title": note.getTitle(), "text": note.getText(), "color": note.getColor()};
+        const aux_note_data = JSON.stringify(note_data);
         fs.writeFileSync(this.path + user + this.slash + note.getTitle() + this.ext, aux_note_data);
         console.log(chalk.green.inverse('The Note Has Been Created Successfully'));
       }
     } else {
       fs.mkdirSync(this.path + user);
-      let note_data = {"title": note.getTitle(), "text": note.getText(), "color": note.getColor()};
-      let aux_note_data = JSON.stringify(note_data);
+      const note_data = {"title": note.getTitle(), "text": note.getText(), "color": note.getColor()};
+      const aux_note_data = JSON.stringify(note_data);
       fs.writeFileSync(this.path + user + this.slash + note.getTitle() + this.ext, aux_note_data);
       console.log(chalk.green.inverse('The Note Has Been Created Successfully'));
     }
@@ -50,8 +50,8 @@ export class Gestor {
     if(fs.existsSync(this.path + user)) {
       if(fs.existsSync(this.path + user + this.slash + note.getTitle() + this.ext)) {
         fs.rmSync(this.path + user + this.slash + note.getTitle() + this.ext);
-        let note_data = {"title": note.getTitle(), "text": note.getText(), "color": note.getColor()};
-        let aux_note_data = JSON.stringify(note_data);
+        const note_data = {"title": note.getTitle(), "text": note.getText(), "color": note.getColor()};
+        const aux_note_data = JSON.stringify(note_data);
         fs.writeFileSync(this.path + user + this.slash + note.getTitle() + this.ext, aux_note_data);
         console.log(chalk.green.inverse('The Note Has Been Modified Successfully'));
       } else {
@@ -87,11 +87,11 @@ export class Gestor {
    */
   listHeads(user: string) {
     if(fs.existsSync(this.path + user)) {
-      let notes_files = fs.readdirSync(this.path + user);
+      const notes_files = fs.readdirSync(this.path + user);
       notes_files.forEach((item) => {
-        let single_note = fs.readFileSync(this.path + user + this.slash + item, 'utf-8');
-        let aux_single_note = JSON.parse(single_note);
-        let note = new Notes(aux_single_note['title'], aux_single_note['text'], aux_single_note['color']);
+        const single_note = fs.readFileSync(this.path + user + this.slash + item, 'utf-8');
+        const aux_single_note = JSON.parse(single_note);
+        const note = new Notes(aux_single_note['title'], aux_single_note['text'], aux_single_note['color']);
         note.printHead();
       });
     } else {
@@ -107,9 +107,9 @@ export class Gestor {
   read(note_title: string, user: string) {
     if(fs.existsSync(this.path + user)) {
       if(fs.existsSync(this.path + user + this.slash + note_title + this.ext)) {
-        let single_note = fs.readFileSync(this.path + user + this.slash + note_title + this.ext, 'utf-8');
-        let aux_single_note = JSON.parse(single_note);
-        let note = new Notes(aux_single_note['title'], aux_single_note['text'], aux_single_note['color']);
+        const single_note = fs.readFileSync(this.path + user + this.slash + note_title + this.ext, 'utf-8');
+        const aux_single_note = JSON.parse(single_note);
+        const note = new Notes(aux_single_note['title'], aux_single_note['text'], aux_single_note['color']);
         note.printHead();
         note.printText();
       } else {
