@@ -1,37 +1,18 @@
-## Welcome to GitHub Pages
+# Desarrollo De Sistemas Informáticos
+## Practica 09. Aplicación de procesamiento de notas de texto
+## Jonay Estévez Díaz
+  
+## 1) Introducción  
+  
+Para el desarrollo de esta practica se han usado las mismas herramientas que en prácticas anteriores, pero han añadido tres más. La primera es **chalk**, que permite colorear de distintos colores y modos los textos que se imprimen por pantalla. La segunda es **yargs** que permite ayudar a crear herramientas de línea de comandos interactivas mediante el análisis de argumentos. Por último, hemos usado la **API síncrona** que nos otorga **Node.js**.  
+  
+Se han desarrollado tres ficheros, una clase para la descripción de una nota de texto, otra clase para gestionar las operaciones que se pueden realizar con las mismas y por último un fichero que describe los comandos para usar la aplicacion por terminal.  
 
-You can use the [editor on GitHub](https://github.com/ULL-ESIT-INF-DSI-2122/ull-esit-inf-dsi-21-22-prct09-filesystem-notes-app-alu0101100586/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ULL-ESIT-INF-DSI-2122/ull-esit-inf-dsi-21-22-prct09-filesystem-notes-app-alu0101100586/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+## 2) Código Desarrollado
+  
+### 2.1) Clase Notes 
+  
+Para su diseño, se optó por tres atributos, título de la nota, texto de la nota y el color de la misma, todos ellos strings
+  
+### 2.2) Clase Gestor
+### 2.3) Comandos APP
